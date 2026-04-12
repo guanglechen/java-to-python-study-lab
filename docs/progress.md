@@ -5,6 +5,7 @@
 - Active phase: Phase 1 and Week 1
 - Focus: repository skeleton and Python language basics
 - Status: in progress
+- Public archive: https://github.com/guanglechen/java-to-python-study-lab
 
 ## Completed
 
