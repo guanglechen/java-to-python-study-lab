@@ -1,1 +1,1 @@
-"""Shared modules will be added from week 2 onward."""
+"""共享模块会从第 2 周开始加入。 EN: Shared modules start from week 2."""

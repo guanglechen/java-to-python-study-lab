@@ -3,6 +3,10 @@ from study_lab.core.basics import calculate_order_total
 from study_lab.core.basics import classify_temperature
 
 
+def test_calculate_order_total_with_empty_prices() -> None:
+    assert calculate_order_total([]) == 0.0
+
+
 def test_calculate_order_total_with_discount() -> None:
     assert calculate_order_total([100.0, 50.0], discount_rate=0.1) == 135.0
 

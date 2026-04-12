@@ -10,12 +10,12 @@ def test_parse_positive_int_returns_integer() -> None:
 
 
 def test_parse_positive_int_raises_for_non_integer() -> None:
-    with pytest.raises(InvalidPositiveIntegerError, match="integer"):
+    with pytest.raises(InvalidPositiveIntegerError, match="整数"):
         parse_positive_int("forty-two")
 
 
 def test_parse_positive_int_raises_for_non_positive_value() -> None:
-    with pytest.raises(InvalidPositiveIntegerError, match="greater than zero"):
+    with pytest.raises(InvalidPositiveIntegerError, match="大于 0"):
         parse_positive_int("0")
 
 
@@ -24,5 +24,5 @@ def test_safe_average_skips_invalid_values() -> None:
 
 
 def test_safe_average_raises_when_no_valid_values_exist() -> None:
-    with pytest.raises(InvalidPositiveIntegerError, match="at least one valid"):
+    with pytest.raises(InvalidPositiveIntegerError, match="至少需要一个有效正整数"):
         safe_average(["zero", "-1"])
