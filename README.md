@@ -1,0 +1,62 @@
+# Python Study Lab
+
+This repository is a long-lived training project for a senior Java engineer moving into Python backend and AI application engineering.
+
+## Current focus
+
+The work starts with two goals:
+
+1. Build a single repository that can grow from language basics into backend and AI engineering.
+2. Start Week 1 learning with runnable Python exercises and tests.
+
+## Repository layout
+
+- `docs/`: learning plans, weekly tasks, and migration notes
+- `src/study_lab/`: application and learning code
+- `tests/`: automated checks for exercises and later project modules
+- `scripts/`: helper scripts for future phases
+- `examples/`: standalone comparison material and small examples
+
+## Learning roadmap
+
+The full training roadmap is stored locally in `docs/study-plan.md`.
+
+The current execution target is `docs/week1-plan.md`.
+
+## Phase order
+
+1. Repository skeleton and learning rules
+2. Python language migration
+3. Engineering tooling and project conventions
+4. FastAPI backend
+5. Database and cache integration
+6. Model integration and RAG
+7. Graph database and knowledge graph
+8. Agent workflow orchestration
+
+## Week 1 outcome
+
+Week 1 is intentionally narrow. The code only covers Python language basics and standard library usage:
+
+- functions
+- list and dictionary handling
+- exception design
+- packages and imports
+
+The goal is to write clear Python code without carrying Java habits into every file.
+
+## Resume point
+
+If work stops and resumes later, start from:
+
+1. `docs/week1-plan.md`
+2. `docs/java-vs-python-notes.md`
+3. `tests/unit/`
+
+## Suggested next command
+
+After the Python environment is prepared, run the week 1 tests with:
+
+```bash
+pytest tests/unit
+```

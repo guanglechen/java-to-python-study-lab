@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/study_lab/__init__.py
+src/study_lab.egg-info/PKG-INFO
+src/study_lab.egg-info/SOURCES.txt
+src/study_lab.egg-info/dependency_links.txt
+src/study_lab.egg-info/requires.txt
+src/study_lab.egg-info/top_level.txt
+src/study_lab/core/__init__.py
+src/study_lab/core/basics.py
+src/study_lab/core/collections_demo.py
+src/study_lab/core/exceptions_demo.py
+src/study_lab/shared/__init__.py
