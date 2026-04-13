@@ -18,13 +18,14 @@
 - `basics` 模块已完成第一轮学习与测试
 - `collections_demo` 模块学习与测试已完成
 - `exceptions_demo` 模块学习与测试已完成
+- `generators_demo` 模块学习与测试已完成
 
 ## 下一步 | Next Actions
 
-1. 按 `docs/plans/phase2-day-plan.md` 开始 Phase 2 Day 1 任务。
-2. 先落地 dataclass 与类型标注进阶示例并补测试。
-3. 每天补至少 2 条 Java 到 Python 的迁移笔记。
-4. Phase 2 Day 5 完成后准备进入工程化工具阶段。
+1. 开始 Phase 2 Day 3：装饰器。
+2. 阅读 `src/study_lab/shared/decorators.py` 与 `tests/unit/test_decorators.py`。
+3. 自己补 1 条重试边界测试（例如只重试指定异常类型）。
+4. 在 `docs/notes/java-vs-python-notes.md` 补 2 条迁移结论。
 
 ## 恢复说明 | Resume Note
 
