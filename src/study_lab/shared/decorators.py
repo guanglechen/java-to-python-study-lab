@@ -2,17 +2,23 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from functools import wraps
 from time import perf_counter
-from typing import Callable
-from typing import ParamSpec
-from typing import TypeVar
+from typing import ParamSpec, Protocol, TypeVar
 
 P = ParamSpec("P")
 R = TypeVar("R")
+R_co = TypeVar("R_co", covariant=True)
 
 
-def timed(func: Callable[P, R]) -> Callable[P, R]:
+class TimedCallable(Protocol[P, R_co]):
+    last_elapsed_ms: float
+
+    def __call__(self, *args: P.args, **kwargs: P.kwargs) -> R_co: ...
+
+
+def timed(func: Callable[P, R]) -> TimedCallable[P, R]:
     """记录函数最近一次执行耗时（毫秒）。 EN: Record last execution time in milliseconds."""
 
     @wraps(func)
@@ -21,10 +27,10 @@ def timed(func: Callable[P, R]) -> Callable[P, R]:
         try:
             return func(*args, **kwargs)
         finally:
-            wrapper.last_elapsed_ms = (perf_counter() - start) * 1000
+            wrapper.last_elapsed_ms = (perf_counter() - start) * 1000  # type: ignore[attr-defined]
 
-    wrapper.last_elapsed_ms = 0.0
-    return wrapper
+    wrapper.last_elapsed_ms = 0.0  # type: ignore[attr-defined]
+    return wrapper  # type: ignore[return-value]
 
 
 def retry_once(func: Callable[P, R]) -> Callable[P, R]:

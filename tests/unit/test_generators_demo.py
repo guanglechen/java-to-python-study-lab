@@ -1,6 +1,4 @@
-from study_lab.core.generators_demo import even_squares_generator
-from study_lab.core.generators_demo import even_squares_list
-from study_lab.core.generators_demo import first_n_values
+from study_lab.core.generators_demo import even_squares_generator, even_squares_list, first_n_values
 
 
 def test_even_squares_list_returns_all_even_squares() -> None:

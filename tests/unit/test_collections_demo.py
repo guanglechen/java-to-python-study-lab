@@ -1,6 +1,4 @@
-from study_lab.core.collections_demo import deduplicate_keep_order
-from study_lab.core.collections_demo import group_scores
-from study_lab.core.collections_demo import word_frequencies
+from study_lab.core.collections_demo import deduplicate_keep_order, group_scores, word_frequencies
 
 
 def test_word_frequencies_normalizes_case_and_punctuation() -> None:

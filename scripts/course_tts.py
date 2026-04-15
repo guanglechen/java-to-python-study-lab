@@ -7,7 +7,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-
 DEFAULT_VOICE = "Tingting"
 DEFAULT_RATE = 185
 
@@ -81,7 +80,8 @@ def chinese_voice_lines() -> list[str]:
     voices = []
     for line in available_voice_lines():
         lowered = line.lower()
-        if "zh_" in lowered or "中文" in line or "tingting" in lowered or "sinji" in lowered or "meijia" in lowered:
+        search_keys = {"zh_", "中文", "tingting", "sinji", "meijia"}
+        if any(key in lowered for key in search_keys):
             voices.append(line)
     return voices
 

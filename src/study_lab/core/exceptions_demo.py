@@ -4,7 +4,9 @@ from __future__ import annotations
 
 
 class InvalidPositiveIntegerError(ValueError):
-    """当值无法转换为正整数时抛出。 EN: Raised when a value cannot be converted into a positive integer."""
+    """当值无法转换为正整数时抛出。
+    EN: Raised when a value cannot be converted into a positive integer.
+    """
 
 
 def parse_positive_int(raw_value: str) -> int:
@@ -26,7 +28,9 @@ def parse_positive_int(raw_value: str) -> int:
 
 
 def safe_average(raw_values: list[str]) -> float:
-    """计算字符串列表中有效正整数的平均值。 EN: Return the average of valid positive integers from a list of strings."""
+    """计算字符串列表中有效正整数的平均值。
+    EN: Return the average of valid positive integers from a list of strings.
+    """
     valid_values = []
     for raw_value in raw_values:
         try:
@@ -35,6 +39,8 @@ def safe_average(raw_values: list[str]) -> float:
             continue
 
     if not valid_values:
-        raise InvalidPositiveIntegerError("至少需要一个有效正整数 | at least one valid positive integer is required")
+        raise InvalidPositiveIntegerError(
+            "至少需要一个有效正整数 | at least one valid positive integer is required"
+        )
 
     return sum(valid_values) / len(valid_values)

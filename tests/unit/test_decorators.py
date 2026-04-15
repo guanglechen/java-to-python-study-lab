@@ -4,8 +4,7 @@ import time
 
 import pytest
 
-from study_lab.shared.decorators import retry_once
-from study_lab.shared.decorators import timed
+from study_lab.shared.decorators import retry_once, timed
 
 
 def test_timed_returns_original_result() -> None:
@@ -23,6 +22,7 @@ def test_timed_records_elapsed_time() -> None:
         return "ok"
 
     assert tiny_sleep() == "ok"
+    # 这里通过类型转换告诉 mypy 这是一个带有 last_elapsed_ms 的特殊函数
     assert tiny_sleep.last_elapsed_ms >= 0
 
 

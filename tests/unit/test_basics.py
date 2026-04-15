@@ -1,6 +1,4 @@
-from study_lab.core.basics import build_greeting
-from study_lab.core.basics import calculate_order_total
-from study_lab.core.basics import classify_temperature
+from study_lab.core.basics import build_greeting, calculate_order_total, classify_temperature
 
 
 def test_calculate_order_total_with_empty_prices() -> None:

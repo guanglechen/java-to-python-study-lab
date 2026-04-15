@@ -22,7 +22,9 @@ def word_frequencies(text: str) -> dict[str, int]:
 
 
 def deduplicate_keep_order(values: list[str]) -> list[str]:
-    """去重并保留首次出现顺序。 EN: Return values without duplicates while preserving first-seen order."""
+    """去重并保留首次出现顺序。
+    EN: Return values without duplicates while preserving first-seen order.
+    """
     seen: set[str] = set()
     ordered: list[str] = []
     for value in values:
@@ -35,7 +37,7 @@ def deduplicate_keep_order(values: list[str]) -> list[str]:
 
 def group_scores(scores: dict[str, int]) -> dict[str, list[str]]:
     """按简单成绩区间分组学生姓名。 EN: Group student names into simple performance bands."""
-    bands = {"excellent": [], "good": [], "needs_work": []}
+    bands: dict[str, list[str]] = {"excellent": [], "good": [], "needs_work": []}
     for name, score in scores.items():
         if score >= 90:
             bands["excellent"].append(name)

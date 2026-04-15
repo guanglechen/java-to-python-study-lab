@@ -1,8 +1,10 @@
 import pytest
 
-from study_lab.core.exceptions_demo import InvalidPositiveIntegerError
-from study_lab.core.exceptions_demo import parse_positive_int
-from study_lab.core.exceptions_demo import safe_average
+from study_lab.core.exceptions_demo import (
+    InvalidPositiveIntegerError,
+    parse_positive_int,
+    safe_average,
+)
 
 
 def test_parse_positive_int_returns_integer() -> None:

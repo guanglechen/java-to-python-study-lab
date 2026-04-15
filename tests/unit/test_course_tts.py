@@ -1,10 +1,12 @@
 from pathlib import Path
 
-from scripts.course_tts import DEFAULT_VOICE
-from scripts.course_tts import build_say_command
-from scripts.course_tts import default_input_file
-from scripts.course_tts import markdown_to_speech_text
-from scripts.course_tts import recommended_voice_text
+from scripts.course_tts import (
+    DEFAULT_VOICE,
+    build_say_command,
+    default_input_file,
+    markdown_to_speech_text,
+    recommended_voice_text,
+)
 
 
 def test_markdown_to_speech_text_skips_headings_and_english_section() -> None:

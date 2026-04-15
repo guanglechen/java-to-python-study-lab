@@ -1,26 +1,70 @@
+# --- 构建系统配置 (Build System) ---
+# 定义如何打包和安装这个项目。相当于 Maven 的 <build> 插件配置。
 [build-system]
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
+# --- 项目核心元数据 (Project Metadata) ---
+# 基本信息，如名称、版本、依赖等。对应 pom.xml 的基本坐标。
 [project]
 name = "study-lab"
 version = "0.1.0"
 description = "Progressive Python learning repository for backend and AI engineering"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [] # 生产环境核心依赖（目前为空）
 
+# --- 可选依赖/开发工具 (Optional Dependencies) ---
+# 只有在开发时才需要的工具（如测试、Lint）。对应 Maven 的 <scope>test</scope>。
 [project.optional-dependencies]
 dev = [
-    "pytest>=8.3,<9",
+    "pytest>=8.3,<9",       # Unit testing
+    "pytest-asyncio>=0.24", # Async support for pytest
+    "ruff>=0.6",           # Super fast Linter & Formatter
+    "mypy>=1.11",          # Static Type Checker
 ]
 
+# --- 工具链配置 (Tooling Configurations) ---
+
+# Setuptools 是 Python 默认的打包工具。这里指定源码在 src 目录下。
 [tool.setuptools]
 package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
+# Pytest 单元测试框架配置。
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
+asyncio_mode = "auto" # 自动识别异步测试
+
+# Ruff: 现代 Python 的“瑞士军刀”。
+# 同时替代了 Flake8 (Lint), Black (Format), isort (Import 排序)。
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+# 开启的规则集
+select = [
+    "E",   # pycodestyle errors (代码风格错误)
+    "W",   # pycodestyle warnings (代码风格警告)
+    "F",   # pyflakes (逻辑错误检查)
+    "I",   # isort (Import 自动排序)
+    "B",   # flake8-bugbear (发现潜在 Bug)
+    "C4",  # flake8-comprehensions (优化集合推导式)
+    "UP",  # pyupgrade (自动升级旧语法)
+]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# Mypy: 静态类型检查器。
+# 让 Python 像 Java 一样进行“编译期”类型校验。
+[tool.mypy]
+python_version = "3.11"
+strict = true              # 开启严格模式（强制要求类型提示）
+ignore_missing_imports = true # 忽略没有类型提示的第三方库

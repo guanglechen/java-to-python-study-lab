@@ -33,7 +33,9 @@ def classify_temperature(celsius: int) -> str:
 
 
 def build_greeting(name: str, city: str | None = None) -> str:
-    """构造问候语，用可选参数替代重载方法。 EN: Build a greeting that uses an optional value instead of overloaded methods."""
+    """构造问候语，用可选参数替代重载方法。
+    EN: Build a greeting that uses an optional value instead of overloaded methods.
+    """
     if city is None:
         return f"Hello, {name}!"
     return f"Hello, {name} from {city}!"

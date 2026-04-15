@@ -2,8 +2,8 @@
 
 ## 当前阶段 | Current Stage
 
-- 活动阶段：Phase 2（Day 1-5）
-- 当前重点：完成 Pythonic 进阶能力补齐（dataclass、generator、decorator、context manager、async）
+- 活动阶段：Phase 3（Day 1-4）
+- 当前重点：工程化工具链（pyproject, pytest, lint, type check, logging, env）
 - 状态：进行中
 - 公开归档：https://github.com/guanglechen/java-to-python-study-lab
 
@@ -19,13 +19,16 @@
 - `collections_demo` 模块学习与测试已完成
 - `exceptions_demo` 模块学习与测试已完成
 - `generators_demo` 模块学习与测试已完成
+- `decorators` 模块学习与测试已完成
+- `context_demo` 模块学习与测试已完成
+- `async_demo` 模块学习与测试已完成
+- Phase 2 所有任务已通过单测并在笔记中记录差异结论。
 
 ## 下一步 | Next Actions
 
-1. 开始 Phase 2 Day 3：装饰器。
-2. 阅读 `src/study_lab/shared/decorators.py` 与 `tests/unit/test_decorators.py`。
-3. 自己补 1 条重试边界测试（例如只重试指定异常类型）。
-4. 在 `docs/notes/java-vs-python-notes.md` 补 2 条迁移结论。
+1. 执行 Phase 3 Day 1 任务。
+2. 配置 Ruff 替代传统 Lint 工具。
+3. 引入 Mypy 进行静态类型检查。
 
 ## 恢复说明 | Resume Note
 
